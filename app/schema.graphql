@@ -1,0 +1,96 @@
+scalar Upload
+
+type  Query {
+	prueba:String
+	Users:[User]
+	User(id:ID!):User
+	Posts:[Post]
+	Post(id:ID!):Post
+}
+
+type Mutation {
+	signup(data:UserCreateInput!):Auth
+	login(email:String!,password:String!):Auth
+	updateUser(id:ID!,data:UserUpdateInput!):User
+	deleteUser(id:ID!):String
+	createPost(data:PostCreateInput!):Post
+	updatePost(id:ID!,data:PostUpdateInput):Post
+	deletePost(id:ID!):String
+}
+
+type Auth{
+	token:String
+	message:String
+}
+
+type User{
+	_id:ID
+	first_name:String
+	last_name:String
+	email:String
+	birth_date:String
+	gender:GENDER
+	posts:[Post]
+	liked:[Post]
+	profile_image:String
+	is_active:Boolean
+}
+
+type Post{
+	_id:ID
+	title:String,
+	author:User,
+	content:String
+	category:CATEGORIES
+	tags:[String]
+	likes:Int
+	is_active:Boolean
+}
+
+enum GENDER {
+	Male
+	Female
+}
+
+enum  CATEGORIES{
+	TECH
+	DEV
+	GAME
+	HEALTH
+}
+
+input UserCreateInput {
+	first_name:String!
+	last_name:String!
+	email:String!
+	password:String!
+	profile_image:Upload
+}
+
+input UserUpdateInput{
+	first_name:String
+	last_name:String
+	email:String
+	password:String
+	birth_date:String
+	gender:GENDER
+	is_active:Boolean
+
+}
+
+
+input PostCreateInput{
+	title:String!
+	content:String!
+	category:CATEGORIES!
+	
+}
+
+input PostUpdateInput{
+	title:String
+	content:String
+	category:CATEGORIES
+	tags:[String]
+	likes:Int
+	is_active:Boolean
+}
