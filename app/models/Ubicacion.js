@@ -2,27 +2,27 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const LocationSchema = new Schema({
-	user:{
+	ref_user:{
 		type:Schema.Types.ObjectId,
 		ref:"User"
 	},
-	coordinates:{
+	coordenadas:{
 		type:Array,
 		required:true
 	},
-	name:{
+	nombre:{
 		type:String,
 		enum: ["Home", "Work", "Other"]
 	},
-	active:{
+	activo:{
 		type: Boolean,
 		default:true
 	},
-	created_at: {
+	creado_en: {
 		type: Date,
 		default: Date.now()
 	},
-	updated_at: {
+	actualizado_en: {
 		type: Date,
 		default: Date.now()
 	}

@@ -2,70 +2,70 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-const RestaurantSchema = new Schema({
-	categories:{
+const RestauranteSchema = new Schema({
+	categorias:{
 		type:Array
 	},
-	brandName: {
+	nombreMarca: {
 		type: String,
 		required: true
 	},
-	street:{
+	calle:{
 		type: String,
 		required: true
 	},
-	number:{
+	numero:{
 		type:String,
 		required:true
 	},
-	postalCode:{
+	codigoPostal:{
 		type:String,
 		required:true
 	},
-	neighborhood:{
+	colonia:{
 		type:String,
 		required:true
 	},
-	state:{
+	estado:{
 		type:String,
 		required:true
 	},
-	city:{
+	ciudad:{
 		type:String,
 		required:true
 	},
-	address: {
+	domicilio: {
 		type: String,
 	},
-	telephone: {
+	telefono: {
 		type: String
 	},
-	commercialName: {
+	nombreComercial: {
 		type: String
 	},
-	web: {
+	sitioweb: {
 		type: String
 	},
-	coordinates: {
+	coordenadas: {
 		type: Array,
 		required: [true, "Es necesaria una ubicación con coordenadas"]
 	},
 	menu: [{
 		type: Schema.Types.ObjectId,
-		ref: "Menu"
+		ref: "Platillo"
 	}],
-	comments: [{
+	comentarios: [{
 		type: Schema.Types.ObjectId,
-		ref: "Comment"
+		ref: "Comentario"
 	}],
-	bankData: {
+	metodo_pago: [{
 		type: Schema.Types.ObjectId,
 		ref: "PaymentMethod"
-	},
-	rating: {
+	}],
+	valoracion: {
 		type: Number
 	},
-	isParentCompany: {
+	es_matriz: {
 		type: Boolean
 	},
 	email: {
@@ -78,15 +78,15 @@ const RestaurantSchema = new Schema({
 		},
 		required: [true, "Email address required"]
 	},
-	active:{
+	activo:{
 		type: Boolean,
 		default:true
 	},
-	created_at: {
+	creado_en: {
 		type: Date,
 		default: Date.now()
 	},
-	updated_at: {
+	actualizado_en: {
 		type: Date,
 		default: Date.now()
 	}
@@ -95,4 +95,4 @@ const RestaurantSchema = new Schema({
 	usePushEach: true
 });
 
-module.exports = mongoose.model("Restaurant", RestaurantSchema);
+module.exports = mongoose.model("Restaurante", RestauranteSchema);

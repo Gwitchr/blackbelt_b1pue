@@ -1,47 +1,47 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const DishSchema = new Schema({
-	name:{
+const PlatilloSchema = new Schema({
+	nombre:{
 		type: String,
 		required:true
 	},
-	description:{
+	descripcion:{
 		type: String,
 		required:true
 	},
-	pictures:{
+	fotos:{
 		type: Array,
 		required:true
 	},
-	ingredients:{
+	ingredientes:{
 		type: Array,
 		required:true
 	},
-	price:{
+	precio:{
 		type: Number,
 		required:true
 	},
-	restaurant: {
+	ref_restaurante: {
 		type: Schema.Types.ObjectId,
 		ref: "Restaurant"
 	},
-	extra:[{
+	extras:[{
 		type:Schema.Types.ObjectId,
 		ref:"Extra"
 	}],
-	categories:{
+	categorias:{
 		type:Array
 	},
-	active:{
+	activo:{
 		type: Boolean,
 		default:true
 	},
-	created_at: {
+	creado_en: {
 		type: Date,
 		default: Date.now()
 	},
-	updated_at: {
+	actualizado_en: {
 		type: Date,
 		default: Date.now()
 	}
@@ -50,4 +50,4 @@ const DishSchema = new Schema({
 	usePushEach: true
 });
 
-module.exports = mongoose.model("Dish", DishSchema);
+module.exports = mongoose.model("Platillo", PlatilloSchema);
