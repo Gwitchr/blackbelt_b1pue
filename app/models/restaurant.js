@@ -12,16 +12,32 @@ const RestaurantSchema = new Schema({
 	},
 	street:{
 		type: String,
-		requied: true
+		required: true
+	},
+	number:{
+		type:String,
+		required:true
+	},
+	postalCode:{
+		type:String,
+		required:true
+	},
+	neighborhood:{
+		type:String,
+		required:true
+	},
+	state:{
+		type:String,
+		required:true
+	},
+	city:{
+		type:String,
+		required:true
 	},
 	address: {
 		type: String,
-		required: true
 	},
 	telephone: {
-		type: String
-	},
-	position: {
 		type: String
 	},
 	commercialName: {
@@ -38,11 +54,19 @@ const RestaurantSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: "Menu"
 	}],
-	comments: {
-		type: String
+	comments: [{
+		type: Schema.Types.ObjectId,
+		ref: "Comment"
+	}],
+	bankData: {
+		type: Schema.Types.ObjectId,
+		ref: "PaymentMethod"
 	},
-	isSubsidiary: {
-		type: String
+	rating: {
+		type: Number
+	},
+	isParentCompany: {
+		type: Boolean
 	},
 	email: {
 		type: String,
@@ -53,6 +77,10 @@ const RestaurantSchema = new Schema({
 
 		},
 		required: [true, "Email address required"]
+	},
+	active:{
+		type: Boolean,
+		default:true
 	},
 	created_at: {
 		type: Date,
