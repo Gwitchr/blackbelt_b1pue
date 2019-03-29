@@ -5,7 +5,7 @@ const ENVS = {
 	dev: {
 		SECRET_KEY: "799651B27B2E5D99D17C9CF6754B5",
 		db: {
-			url: "mongodb://127.0.0.1:27017/blog"
+			url: "mongodb+srv://uber_eats:Bfz55M1yYjkCboSrN7jYo8Q5iyJTXy3whBthrN8tOzb0ZLJQ@cluster0-nct6c.mongodb.net/test?retryWrites=true"
 		}
 	},
 

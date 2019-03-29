@@ -1,10 +1,16 @@
-// const  Post = require("../models/Posts");
+const Restaurant = require("../models/Restaurante");
 
+const createRestaurant = (data) => {
+	return Restaurant.create(data);
+};
+
+module.exports = {
+	createRestaurant
+};
 
 // const createPost = (data) => {
 // 	return Post.create(data);
 // };
-
 
 // const getAllPost = () => {
 // 	return Post.find({is_active:true}).populate("author");
@@ -39,5 +45,4 @@
 // 	getPostsByTag,
 // 	updatePostById,
 // 	deletePostById
-
 // };

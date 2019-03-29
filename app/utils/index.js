@@ -3,16 +3,15 @@ const { SECRET_KEY } = require("../config");
 const { getUserById } = require("../actions");
 
 const cloudinary =  require("cloudinary");
-const dotenv =  require("dotenv");
+// const dotenv =  require("dotenv");
 
-const result  = dotenv.config();
+// const result  = dotenv.config();
 
-try{
-	if(result.error) throw result.error;
-}catch(e){
-	console.log(e);
-}
-
+// try{
+// 	if(result.error) throw result.error;
+// }catch(e){
+// 	console.log(e);
+// }
 
 function getUserId(context) {
 

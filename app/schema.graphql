@@ -9,6 +9,7 @@ type  Query {
 }
 
 type Mutation {
+	createRestaurant(data: RestaurantCreateInput!):Restaurant
 	signup(data:UserCreateInput!):Auth
 	login(email:String!,password:String!):Auth
 	updateUser(id:ID!,data:UserUpdateInput!):User
@@ -21,6 +22,32 @@ type Mutation {
 type Auth{
 	token:String
 	message:String
+}
+
+type Restaurant {
+	_id: ID
+	categorias: [String]
+	nombreMarca: String
+	calle:String
+	numero:String
+	codigoPostal:String
+	colonia:String
+	estado:String
+	ciudad:String
+	domicilio:String
+	telefono: String
+	nombreComercial:String
+	sitioweb: String
+	coordenadas:[String]
+	menu: [ID]
+	comentarios: [ID]
+	metodo_pago: [ID]
+	valoracion: Int
+	es_matriz: Boolean
+	email: String
+	activo: Boolean
+	creado_en: String
+	actualizado_en: String
 }
 
 type User{
@@ -57,6 +84,18 @@ enum  CATEGORIES{
 	DEV
 	GAME
 	HEALTH
+}
+
+input RestaurantCreateInput {
+	nombreMarca:String!
+	calle:String!
+	numero:String!
+	codigoPostal:String!
+	colonia:String!
+	estado:String!
+	ciudad:String!
+	coordenadas:[String]!
+	email:String!
 }
 
 input UserCreateInput {

@@ -78,7 +78,8 @@ const RestauranteSchema = new Schema({
 		},
 		required: [true, "Email address required"]
 	},
-	activo:{
+	// Borrado Lógico 
+	activo: {
 		type: Boolean,
 		default:true
 	},
