@@ -6,7 +6,7 @@ const RestauranteSchema = new Schema({
 	categorias:{
 		type:Array
 	},
-	nombreMarca: {
+	nombre_marca: {
 		type: String,
 		required: true
 	},
@@ -18,7 +18,7 @@ const RestauranteSchema = new Schema({
 		type:String,
 		required:true
 	},
-	codigoPostal:{
+	codigo_postal:{
 		type:String,
 		required:true
 	},
@@ -40,7 +40,7 @@ const RestauranteSchema = new Schema({
 	telefono: {
 		type: String
 	},
-	nombreComercial: {
+	nombre_comercial: {
 		type: String
 	},
 	sitioweb: {
@@ -78,7 +78,7 @@ const RestauranteSchema = new Schema({
 		},
 		required: [true, "Email address required"]
 	},
-	// Borrado Lógico 
+	// Borrado Lógico
 	activo: {
 		type: Boolean,
 		default:true

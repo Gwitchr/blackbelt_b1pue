@@ -87,10 +87,10 @@ enum  CATEGORIES{
 }
 
 input RestaurantCreateInput {
-	nombreMarca:String!
+	nombre_marca:String!
 	calle:String!
 	numero:String!
-	codigoPostal:String!
+	codigo_postal:String!
 	colonia:String!
 	estado:String!
 	ciudad:String!
@@ -122,7 +122,7 @@ input PostCreateInput{
 	title:String!
 	content:String!
 	category:CATEGORIES!
-	
+
 }
 
 input PostUpdateInput{
